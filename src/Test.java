@@ -1,7 +1,4 @@
-import Sorting.BubbleSort;
-import Sorting.SimpleInsertSort;
-import Sorting.SimpleSelection;
-import Sorting.Sort;
+import Sorting.*;
 
 import java.util.Arrays;
 
@@ -55,7 +52,10 @@ public class Test {
         // 冒泡排序
         //Sort s = new BubbleSort();
         // Sort s = new SimpleSelection();
-        Sort s = new SimpleInsertSort();
+       // Sort s = new SimpleInsertSort();
+        //Sort s = new ShellSort();
+//        Sort s = new HeapSort();
+        Sort s = new MergeSort();
         s.sort(arr);
 
         // 判断数组是否正确排序
@@ -63,7 +63,10 @@ public class Test {
         int[] arr1 = Arrays.copyOf(arr,1000);
         Arrays.sort(arr1);
         for(int i = 0; i < arr.length; i++){
-            if(arr[i] != arr1[i]) isSorted = false;
+            if (arr[i] != arr1[i]) {
+                isSorted = false;
+                break;
+            }
         }
 
         System.out.println(Arrays.toString(arr));
