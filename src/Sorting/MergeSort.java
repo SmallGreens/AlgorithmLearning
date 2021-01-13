@@ -10,13 +10,12 @@ public class MergeSort extends Sort{
     private void mergeSort(int[] a, int start, int end){
         if(end == start) return;
         int mid = start + (end - start)/2;
-        mergeSort(a,start,mid);
-        mergeSort(a,mid+1,end);
-        merge(a,start,end);
+        mergeSort(a, start, mid);
+        mergeSort(a,mid+1, end);
+        merge(a, start, end, mid);
     }
     // 合并数组
-    private void merge(int[] a, int start, int end){
-        int mid = start + (end - start)/2; // e.g. 0,1,2, end = 2, start = 0, 0 + 2/2 = 1,
+    private void merge(int[] a, int start, int end, int mid){
         int preIndex = start, postIndex = mid + 1, index = start;
         while(preIndex <= mid && postIndex <= end){
             if(a[preIndex] < a[postIndex]) res[index++] = a[preIndex++];
@@ -25,7 +24,8 @@ public class MergeSort extends Sort{
         }
         while(preIndex <= mid) res[index++] = a[preIndex++];
         while(postIndex <= end) res[index++] = a[postIndex++];
-        // ！！这一步必须添加！！ ref: https://www.cnblogs.com/chengxiao/p/6194356.html
+        // ！！这一步必须添加！！ 将 res 中的值复制到 a 中
+        // ref: https://www.cnblogs.com/chengxiao/p/6194356.html
         if (end + 1 - start >= 0) System.arraycopy(res, start, a, start, end + 1 - start);
     }
 }

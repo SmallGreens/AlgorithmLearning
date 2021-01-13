@@ -55,7 +55,8 @@ public class Test {
        // Sort s = new SimpleInsertSort();
         //Sort s = new ShellSort();
 //        Sort s = new HeapSort();
-        Sort s = new MergeSort();
+       // Sort s = new MergeSort();
+        Sort s = new QuickSort();
         s.sort(arr);
 
         // 判断数组是否正确排序
