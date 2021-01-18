@@ -1,9 +1,11 @@
 import Sorting.*;
+import unionFind.BasicUnionFind;
 
 import java.util.Arrays;
 
 public class Test {
-    public static void main(String[] args) {
+    // test functon for sort algorithm
+    public static void main1(String[] args) {
 
         // 生成一个随机数组，长度为1000
 //        int[] arr = new int[1000];
@@ -55,8 +57,8 @@ public class Test {
        // Sort s = new SimpleInsertSort();
         //Sort s = new ShellSort();
 //        Sort s = new HeapSort();
-       // Sort s = new MergeSort();
-        Sort s = new QuickSort();
+        Sort s = new MergeSort();
+       // Sort s = new QuickSort();
         s.sort(arr);
 
         // 判断数组是否正确排序
@@ -75,5 +77,20 @@ public class Test {
         System.out.println("Arrays' length is: " + arr.length);
         System.out.println("CompareTimes is: " + s.compareTimes);
         System.out.println("SwapTimes is: " + s.swapTimes);
+    }
+
+    // test function for unionFind
+    public static void main(String[] args) {
+
+        // 连接关系
+        int[][] testData = {{1,2},{3,4},{5,6},{6,1},{2,5},{7,8}};
+
+        // 寻找的数据集中 一共有 8 个数字
+        BasicUnionFind buf = new BasicUnionFind(9);
+
+        boolean res = buf.findCircle(testData);
+        System.out.println("Have circle? " + res);
+        System.out.println("The parent array is: " + Arrays.toString(buf.getParent()));
+
     }
 }
