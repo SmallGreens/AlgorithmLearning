@@ -2,6 +2,10 @@
 
 This is my personal learning record. The detailed logs is shown below:
 
-**2021, Jan.11 -** 
+**2021, Jan. 11th - Jan. 13th** 
 
-- Learning records on the sorting algorithm 
+- Learning records on the sorting algorithm.
+
+**2021 Jan. 18th - Jan.**
+
+- Learning the union find algorithm.  
