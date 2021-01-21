@@ -20,6 +20,8 @@ public class BasicUnionFind {
         return parent;
     }
 
+    // 一种计算秩的方式，在 findRoot 的时候进行统计。
+    // 另一个中计算 rank 的方式是在 union 的时候，如果需要合并两个秩相同的树，则其中一棵树的秩会增加1.
     public Map<String, Integer> findRoot(int x){
         Map<String, Integer> map = new HashMap<>();
         int rank = 0;
